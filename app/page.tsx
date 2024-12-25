@@ -7,7 +7,7 @@ import SearchFormReset from "@/components/SearchFormReset";
 const page = async({searchParams}: {searchParams: Promise<{query?: string}>})=>{
   const query = (await searchParams).query
   
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?query=${query || ''}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`)
   const posts = await res.json()
 
   return (
